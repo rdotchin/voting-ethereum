@@ -26,3 +26,7 @@ deployedContract = VotingContract.new(['Rama','Nick','Jose'],{data: contract.cod
 
 /*CONTRACT INSTANCE*/
 contractInstance = VotingContract.at(deployedContract.address); 
+
+/*INTERACT WITH TEH CONTRACT*/
+contractInstance.totalVotesFor.call('Rama'); //total votes count
+contractInstance.voteForCandidate('Rama', {from: web3.eth.accounts[0]}); //vote for the candidate
